@@ -85,6 +85,18 @@ package.json files will have all the important meta information about the applic
 
 It is a generated file and not desingned for manual editing. It tracks the entire tree of dependencies including dependencies of dependencies and exact version of each dependencies.
 
+* What is `node_modules` ? Is it a good idea to push that on git?
+
+node modules folder will have all the installed dependicies files of our application. No need to push node modules to git as it can be re-generated.
+
+* What is the `dist` folder?
+
+dist means distributable. It contains minfied and concatenated version of our source code. The code present in this folder is used in production web application.
+
+* What is `browserlists`
+
+It is a config to share target browsers and node.js versions in different frontend tools. Developers sets their version using query lie `last 2 versions`.
+
 
 
 
