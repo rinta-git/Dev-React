@@ -43,6 +43,91 @@ Webpack need a config file after installation. Webpack don't have provision for 
 
 If our application uses only basic functionalities then parcel is preffered but if the application is large and has dependency to third-party import then webpack is prefferable.
 
+* What is `.parcel-cache`?
+
+.parcel-cache file has the information about your project build. So when it re-builds, it doesn't need to re-parse and re-analyse everything from scratch. So it makes parcel faster in development mode.
+
+* What is `npx` ?
+
+npx is a package executor. It is used for running the package in the npm registory without installing it. It is usefull when we need a dependency only once in our application.
+
+* What is difference between `dependencies` vs `devDependencies`
+
+dependencies are the dependencies required for the production of our app. `npm i <pkg-name> [--save-prod]`
+devDependencies are the dependencies required only for the local development and testing of our app. `npm i <pkg-name> --save-dev`
+
+* What is Tree Shaking?
+
+Tree shaking is a term used for dead code elimination. The bundlers automatically remove dead code while bundling mutiple js files into single file. It is important for maing our app production ready by clean, minified size.
+
+* What is Hot Module Replacement?
+
+Hot module replacement is the process of adding, removing or exchanging modules while an application is running by without fully reloading. This speed upp development by keeping track of the application state which is lost during full reload and save valuable development time by only updating the part changed.
+
+* List down 5 superpowers of Parcel
+
+  - hot module replacement
+  - caching
+  - tree shaking
+  - minifying
+  - compatable with every browser and versions
+  - compression ; rename variables
+  
+* What is `.gitignore`? What should we add and not add into it?
+
+.gitignore is the place where the files which needs to be ignored is placed. It can be a files which contains sensitive informations, system specific informations or can be a file which can be re-generated.
+
+* What is the difference between `package.json` and `package-lock.json`
+
+package.json files will have all the important meta information about the application like name, author, script, dependencies. package-lock.json file is a locked file which has all dependencies of our application with name and exact version being used.
+
+*  Why should I not modify `package-lock.json`?
+
+It is a generated file and not desingned for manual editing. It tracks the entire tree of dependencies including dependencies of dependencies and exact version of each dependencies.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
