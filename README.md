@@ -29,6 +29,19 @@ React library is responsible for creating views and ReactDOM library is responsi
 Development mode includes useful warnings and gives you access to tools that make development and debugging easier. 
 Production mode minifies your code and better represents the performance your app will have on end users' devices.
 
+* What is `NPM`?
+
+NPM is for a package management. It is used for using dependencies in our application.
+
+* What is `Parcel/Webpack`? Why do we need it?
+
+Parcel and webpack both are bundlers used to bundle modules. It helps to clean, minify and compact our application while requesting or getting response from server. So it makes application performance faster by reducing load time.
+
+Parcel doesn't need any config file after installation. It has built-in provision for hot module replacement and dead code elimination. But not a provision for code splitting. It has builtin module transformers for other type files than js files.
+
+Webpack need a config file after installation. Webpack don't have provision for hot module replacement, dead code elimination but can be achieved by webpack-dev-server plugin. Webpack has the provision for lazy loading by code splitting. In webapck, we need to manually specify installation, configuration, types pf files to be transffered, plugin configuration to transform files other than js type.
+
+If our application uses only basic functionalities then parcel is preffered but if the application is large and has dependency to third-party import then webpack is prefferable.
 
 
 
