@@ -97,7 +97,11 @@ dist means distributable. It contains minfied and concatenated version of our so
 
 It is a config to share target browsers and node.js versions in different frontend tools. Developers sets their version using query lie `last 2 versions`.
 
+* Framework v/s Library
 
+  A framework is like a foundation to build application for a particular paltform. Framework provide a standard set of tools and conventions that can use and manage the various components of an application such as datastorage, user interface and business logic. Eg; Django, Ruby on Rails, Laravel.
+
+  A library is a collection of pre-wriiten code that can be used to perform common tasks or add specific functionality to a programme. It is often written in specific programming language and are designed to be easily reusable and modular. Eg; React, Bootstrap.
 
 
 
