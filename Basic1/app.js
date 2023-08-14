@@ -1,15 +1,9 @@
 import React from 'react';
 import  ReactDOM from 'react-dom/client';
 
-const heading = React.createElement("h1", {}, "hello world!"); //tag, obj, value
-const p = React.createElement(
-  "p",
-  { title: "first" },
-  "Sample programme in react"
-);
-const div = React.createElement("div", { name: "parent div" }, [
-  heading,
-  p,
-]);
-const root = ReactDOM.createRoot(document.getElementById("container"));
-root.render(div);
+const jsxHead =( <h2 className='heading2'>
+  Hey Rinta
+  </h2>
+)
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(jsxHead);
