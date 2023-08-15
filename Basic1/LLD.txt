@@ -1,0 +1,25 @@
+--App--
+Header
+    -Logo
+    -NavItems
+        -Home
+        -AboutUs
+        -Cart
+
+body
+    -SearchBar
+    -RestaurentContainer
+        -RestaurentCards
+            -Img
+            -name
+            -Rating
+            -Cusines
+            -Distance
+
+Footer
+    -CopyRight
+    -Links
+        -ContactUs
+        -AboutUs
+
+--App--
