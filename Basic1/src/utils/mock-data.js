@@ -1,6 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
 const restaurentList = [
   {
     info: {
@@ -807,68 +804,4 @@ const restaurentList = [
   },
 ];
 
-const Header = () => (
-  <div className="header-wrapper">
-    <div className="logo">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyxGDRCx8ih-0-AuggJpaKGhu_g1GW6jDTTNWLqkjRuyCtVqa2AlINWByyZ5mktRFClW8&usqp=CAU"
-        className="hungry-spot-logo"
-      />
-    </div>
-    <div className="nav-items">
-      <ul className="nav-links-wrapper">
-        <li>Home</li>
-        <li>About Us</li>
-        <li>Cart</li>
-      </ul>
-    </div>
-  </div>
-);
-
-const Card = (props) => {
-  const {
-    restaurentDetails: { info },
-  } = props;
-  const { name, cuisines, avgRating, locality, cloudinaryImageId } = info;
-  return (
-    <div className="card-wrapper">
-      <div className="restaurent-logo">
-        <img
-          src={
-            "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-            cloudinaryImageId
-          }
-          alt={name}
-          style={{width: '100%',height: '100%',objectFit: 'cover'}}
-        />
-      </div>
-      <div>
-        <h3>{name}</h3>
-        <h6>{cuisines.join(", ")}</h6>
-        <h6>{avgRating} stars</h6>
-        <h6>{locality}</h6>
-      </div>
-    </div>
-  );
-};
-
-const Body = () => (
-  <>
-    <div className="search">Search</div>
-    <div className="restaurent-container">
-      {restaurentList.map((restaurent) => {
-        return <Card key={restaurent.info.id} restaurentDetails={restaurent} />;
-      })}
-    </div>
-  </>
-);
-
-const AppLayout = () => (
-  <>
-    <Header />
-    <Body />
-  </>
-);
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default restaurentList;

@@ -1,55 +1,56 @@
-.header-wrapper{
-    display: flex;
-    justify-content: space-between;
-    border: 1px solid black;
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
 }
 
-.hungry-spot-logo{
-    width: 100px;
-    height: auto;
+.hungry-spot-logo {
+  width: 100px;
+  height: auto;
 }
-.nav-items{
-    align-self: center;
+.nav-items {
+  align-self: center;
 }
 .nav-items > ul {
-    display: inline-flex;
-    padding: 0px 15px;
-    justify-content: center;
+  display: inline-flex;
+  padding: 0px 15px;
+  justify-content: center;
 }
 
-.nav-items > ul > li{
-    list-style: none;
-    margin: 0px 10px;
-    font-size: 20px;
+.nav-items > ul > li {
+  list-style: none;
+  margin: 0px 10px;
+  font-size: 20px;
 }
-.restaurent-container{
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.card-wrapper{
-    width: 200px;
-    padding: 10px;
-    margin: 10px 10px;
+.restaurent-container {
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.search{
-    padding: 10px 0px;
-}
-.card-wrapper:hover{
-    border: 1px solid black;
-    cursor: pointer;
+.card-wrapper {
+  width: 200px;
+  padding: 10px;
+  margin: 10px 10px;
 }
 
-.restaurent-logo{
-    width: 100%;
-    height: 150px;
+.filter-btn {
+  padding: 10px;
+  margin: 10px 0px;
+}
+.card-wrapper:hover {
+  border: 1px solid black;
+  cursor: pointer;
 }
 
-h3{
-    margin: 0px 2px;
+.restaurent-logo {
+  width: 100%;
+  height: 150px;
 }
 
-h6{
-    margin: 0px 2px;
+h3 {
+  margin: 0px 2px;
+}
+
+h6 {
+  margin: 0px 2px;
 }
