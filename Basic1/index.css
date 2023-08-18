@@ -54,3 +54,24 @@ h3 {
 h6 {
   margin: 0px 2px;
 }
+.shimmer-card-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shimmer-card{
+  width: 220px;
+  height: 244px;
+  margin:10px;
+  background-color: lightsteelblue;
+}
+
+.filter-container{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-wrapper{
+  padding: 10px 10px;
+  align-self: center;
+}
