@@ -1,5 +1,6 @@
 import { HUNGRY_SPOT_LOGO } from "../utils/constants";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [btnText, setBtnText] = useState("Login");
   return (
@@ -9,9 +10,18 @@ const Header = () => {
       </div>
       <div className="nav-items">
         <ul className="nav-links-wrapper">
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Cart</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about-us">About Us</Link>
+          </li>
+          <li>
+            <Link to="/contact-us">Contact Us</Link>
+          </li>
+          <li>
+            <Link to="/">Cart</Link>
+          </li>
           <li>
             <button
               className="sign-in-btn"
