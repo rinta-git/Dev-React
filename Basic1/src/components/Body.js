@@ -2,6 +2,7 @@ import Card from "./Card";
 import { useState, useEffect } from "react";
 import ShimmerCard from "./ShimmerCard";
 import { Link } from "react-router-dom";
+import { RES_LIST_API } from "../utils/constants";
 const Body = () => {
   const [restaurents, setRestaurentList] = useState([]);
   const [searchInput, setSearchInput] = useState("");
@@ -11,9 +12,7 @@ const Body = () => {
   }, []);
 
   const fetchData = async () => {
-    const data = await fetch(
-      "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(RES_LIST_API);
     const json = await data.json();
     setRestaurentList(
       json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants

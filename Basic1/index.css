@@ -75,3 +75,9 @@ h6 {
   padding: 10px 10px;
   align-self: center;
 }
+
+.profile-container{
+  border: 1px solid #000;
+  padding: 10px;
+  margin-bottom: 10px;
+}
