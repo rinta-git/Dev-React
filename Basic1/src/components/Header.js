@@ -1,8 +1,12 @@
 import { HUNGRY_SPOT_LOGO } from "../utils/constants";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 const Header = () => {
   const [btnText, setBtnText] = useState("Login");
+  const onlineStatus = useOnlineStatus();
+  
+
   return (
     <div className="header-wrapper">
       <div className="logo">
@@ -21,6 +25,12 @@ const Header = () => {
           </li>
           <li>
             <Link to="/">Cart</Link>
+          </li>
+          <li>
+            <Link to="/groceries">Groceries</Link>
+          </li>
+          <li>
+            Online: {onlineStatus ? '🟢' : '🔴'}
           </li>
           <li>
             <button

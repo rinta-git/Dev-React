@@ -1,22 +1,11 @@
-import { useEffect, useState } from "react";
 import ShimmerCard from "./ShimmerCard";
-import { MENU_API } from "../utils/constants";
+import useRestaurentMenu from "../utils/useRestaurentMenu";
 import { useParams } from "react-router-dom";
 
 const Restaurent = () => {
-  const [restaurentMenu, setRestaurentMenu] = useState(null);
+  const { resId } = useParams();
 
-  const param = useParams()
-  console.log(param.resId)
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_API + param.resId);
-    const result = await data.json();
-    setRestaurentMenu(result.data);
-  };
+  const restaurentMenu = useRestaurentMenu(resId); //using custom hook to fetch details
 
   if (restaurentMenu === null) return <ShimmerCard />;
 
