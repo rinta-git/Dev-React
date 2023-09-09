@@ -32,9 +32,9 @@ const Body = () => {
     <ShimmerCard />
   ) : (
     <>
-      <div className="filter-container">
+      <div className="flex my-10 px-4">
         <button
-          className="filter-btn"
+          className="border border-solid rounded-md p-2"
           onClick={() => {
             const filteredList = restaurents.filter(
               (restaurent) => restaurent.info.avgRating >= 4
@@ -44,14 +44,16 @@ const Body = () => {
         >
           Top Rated Restaurents
         </button>
-        <div className="search-wrapper">
+        <div className="mx-[15px]">
           <input
             type="text"
-            className="serach-box"
+            className="border border-stone-900 mx-2 h-full bg-gray-200 hover:bg-white text-left p-2"
             value={searchInput}
+            placeholder="Search for restaurent"
             onChange={(e) => setSearchInput(e.target.value)}
           />
           <button
+            className="border border-solid rounded-md p-2"
             onClick={() => {
               const filteredData = restaurents.filter((res) =>
                 res.info.name
@@ -66,7 +68,7 @@ const Body = () => {
           </button>
         </div>
       </div>
-      <div className="restaurent-container">
+      <div className="flex  flex-wrap ">
         {searchedList.map((restaurent) => {
           return (
             <Link

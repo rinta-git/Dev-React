@@ -8,28 +8,28 @@ const Header = () => {
   
 
   return (
-    <div className="header-wrapper">
-      <div className="logo">
+    <div className="flex justify-between shadow-lg">
+      <div className="w-36">
         <img src={HUNGRY_SPOT_LOGO} className="hungry-spot-logo" />
       </div>
-      <div className="nav-items">
-        <ul className="nav-links-wrapper">
-          <li>
+      <div className="flex items-center">
+        <ul className="flex p-4 m-4">
+          <li className="mx-3">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className="mx-3">
             <Link to="/about-us">About Us</Link>
           </li>
-          <li>
+          <li className="mx-3"> 
             <Link to="/contact-us">Contact Us</Link>
           </li>
-          <li>
+          <li className="mx-3">
             <Link to="/">Cart</Link>
           </li>
-          <li>
+          <li className="mx-3">
             <Link to="/groceries">Groceries</Link>
           </li>
-          <li>
+          <li className="mx-3">
             Online: {onlineStatus ? '🟢' : '🔴'}
           </li>
           <li>
