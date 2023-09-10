@@ -1,13 +1,15 @@
-import Card from "./Card";
-import { useState, useEffect } from "react";
+import Card, { VegCard } from "./Card";
+import { useState, useEffect, useContext } from "react";
 import ShimmerCard from "./ShimmerCard";
 import { Link } from "react-router-dom";
 import { RES_LIST_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 const Body = () => {
   const [restaurents, setRestaurentList] = useState([]);
   const [searchInput, setSearchInput] = useState("");
   const [searchedList, setSearchedList] = useState([]);
+  const { loggedInUser, setUserName } = useContext(UserContext);
   useEffect(() => {
     fetchData();
   }, []);
@@ -23,6 +25,8 @@ const Body = () => {
     );
   };
 
+  const VegOnlyCard = VegCard(Card);
+
   const onlineStatus = useOnlineStatus(); //custome hook
   if (!onlineStatus) {
     return <h1>Looks like you are offline😞. Check your internet please.</h1>;
@@ -37,7 +41,7 @@ const Body = () => {
           className="border border-solid rounded-md p-2"
           onClick={() => {
             const filteredList = restaurents.filter(
-              (restaurent) => restaurent.info.avgRating >= 4
+              (restaurent) => restaurent?.info?.avgRating >= 4
             );
             setSearchedList(filteredList);
           }}
@@ -56,7 +60,7 @@ const Body = () => {
             className="border border-solid rounded-md p-2"
             onClick={() => {
               const filteredData = restaurents.filter((res) =>
-                res.info.name
+                res?.info?.name
                   .toLocaleLowerCase()
                   .includes(searchInput.toLocaleLowerCase())
               );
@@ -67,16 +71,25 @@ const Body = () => {
             Search
           </button>
         </div>
+        <input
+          type="text"
+          className="border"
+          value={loggedInUser}
+          onChange={(e) => setUserName(e.target.value)}
+        />
       </div>
       <div className="flex  flex-wrap ">
         {searchedList.map((restaurent) => {
           return (
             <Link
-              key={restaurent.info.id}
-              to={"/restaurants/" + restaurent.info.id}
+              key={restaurent?.info?.id}
+              to={"/restaurants/" + restaurent?.info?.id}
             >
-              {" "}
-              <Card restaurentDetails={restaurent} />{" "}
+              {restaurent?.info?.veg ? (
+                <VegOnlyCard restaurentDetails={restaurent} />
+              ) : (
+                <Card restaurentDetails={restaurent} />
+              )}
             </Link>
           );
         })}

@@ -1,11 +1,12 @@
 import { HUNGRY_SPOT_LOGO } from "../utils/constants";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/userContext";
 const Header = () => {
   const [btnText, setBtnText] = useState("Login");
   const onlineStatus = useOnlineStatus();
-  
+  const { loggedInUser } = useContext(UserContext);
 
   return (
     <div className="flex justify-between shadow-lg">
@@ -20,7 +21,7 @@ const Header = () => {
           <li className="mx-3">
             <Link to="/about-us">About Us</Link>
           </li>
-          <li className="mx-3"> 
+          <li className="mx-3">
             <Link to="/contact-us">Contact Us</Link>
           </li>
           <li className="mx-3">
@@ -29,9 +30,7 @@ const Header = () => {
           <li className="mx-3">
             <Link to="/groceries">Groceries</Link>
           </li>
-          <li className="mx-3">
-            Online: {onlineStatus ? '🟢' : '🔴'}
-          </li>
+          <li className="mx-3">Online: {onlineStatus ? "🟢" : "🔴"}</li>
           <li>
             <button
               className="sign-in-btn"
@@ -44,6 +43,7 @@ const Header = () => {
               {btnText}
             </button>
           </li>
+          <li className="font-bold mx-3">{loggedInUser}</li>
         </ul>
       </div>
     </div>

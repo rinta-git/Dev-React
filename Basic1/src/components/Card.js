@@ -41,4 +41,15 @@ const Card = (props) => {
   );
 };
 
+export const VegCard = (Card) => {
+  return (props) => {
+    return (
+      <div className="relative">
+        <label className="absolute bg-green-600 text-white mt-2 p-2 rounded-md">Pure Veg</label>
+        <Card {...props} />
+      </div>
+    );
+  };
+};
+
 export default Card;
