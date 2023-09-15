@@ -3,10 +3,12 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 const Header = () => {
   const [btnText, setBtnText] = useState("Login");
   const onlineStatus = useOnlineStatus();
   const { loggedInUser } = useContext(UserContext);
+  const cartItems = useSelector((store) => store.cart.items);
 
   return (
     <div className="flex justify-between shadow-lg">
@@ -25,7 +27,14 @@ const Header = () => {
             <Link to="/contact-us">Contact Us</Link>
           </li>
           <li className="mx-3">
-            <Link to="/">Cart</Link>
+            <Link to="/cart">
+              Cart
+              {cartItems.length >= 1 && (
+                <span className="px-1 mx-1 bg-green-600 text-white">
+                  {cartItems.length}
+                </span>
+              )}
+            </Link>
           </li>
           <li className="mx-3">
             <Link to="/groceries">Groceries</Link>

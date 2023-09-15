@@ -23,3 +23,14 @@ Footer
         -AboutUs
 
 --App--
+
+
+
+
+#Redux Toolkit
+- install @reduxjs/toolit and react-redux
+- build store
+- connect store to app
+- create a slice
+- dispatch action
+- read the data using selector

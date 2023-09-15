@@ -1,7 +1,13 @@
 import { CARD_IMG } from "../utils/constants";
+import { useDispatch } from "react-redux";
+import { addItem } from "../features/cartSlice";
 
 const CategoryItem = (props) => {
   const { items } = props;
+  const dispatch = useDispatch();
+  const addToCart = (item) => {
+    dispatch(addItem(item));
+  };
   return (
     <>
       {items.map((item) => {
@@ -28,7 +34,10 @@ const CategoryItem = (props) => {
                 src={CARD_IMG + item?.card?.info?.imageId}
                 alt={item?.card?.info?.name}
               />
-              <button className="border bg-white text-green-600 font-bold text-sm absolute left-9 translate-y-3 bottom-1 py-2 px-4 rounded-md">
+              <button
+                className="border bg-white text-green-600 font-bold text-sm absolute left-9 translate-y-3 bottom-1 py-2 px-4 rounded-md"
+                onClick={() => addToCart(item)}
+              >
                 ADD +
               </button>
             </div>
