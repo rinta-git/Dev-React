@@ -1,12 +1,11 @@
 import { CARD_IMG } from "../utils/constants";
 
 const Card = (props) => {
-  const {
-    restaurentDetails: { info },
-  } = props;
-  const { name, cuisines, avgRating, locality, cloudinaryImageId } = info;
+  const { restaurentDetails } = props;
+  const { name, cuisines, avgRating, locality, cloudinaryImageId } =
+    restaurentDetails;
   return (
-    <div className="m-4 p-4 w-[230px] hover:scale-95">
+    <div className="m-4 p-4 w-[230px] hover:scale-95" data-testid="resCards">
       <div className="min-h-max">
         <img
           className="rounded-xl w-full max-h-44"
@@ -34,7 +33,7 @@ const Card = (props) => {
         </p>
         <p className="font-bold text-sm text-gray-600">{locality}</p>
         <p className="text-gray-600 text-base truncate block">
-          {cuisines.join(", ")}
+          {cuisines.length && cuisines.join(", ")}
         </p>
       </div>
     </div>
@@ -45,7 +44,9 @@ export const VegCard = (Card) => {
   return (props) => {
     return (
       <div className="relative">
-        <label className="absolute bg-green-600 text-white mt-2 p-2 rounded-md">Pure Veg</label>
+        <label className="absolute bg-green-600 text-white mt-2 p-2 rounded-md">
+          Pure Veg
+        </label>
         <Card {...props} />
       </div>
     );

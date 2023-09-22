@@ -21,7 +21,7 @@ const RestaurentMenu = (props) => {
           {showItemsList ? (
             <span>
               <svg
-                class="h-8 w-8 text-gray-500"
+                className="h-8 w-8 text-gray-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -37,7 +37,7 @@ const RestaurentMenu = (props) => {
           ) : (
             <span>
               <svg
-                class="h-8 w-8 text-gray-500"
+                className="h-8 w-8 text-gray-500"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"

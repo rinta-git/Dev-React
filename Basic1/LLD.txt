@@ -34,3 +34,17 @@ Footer
 - create a slice
 - dispatch action
 - read the data using selector
+
+
+
+#Testing
+- install React Testing Library
+- install JEST
+- install Babel dependencies
+- configure babel
+- configure parcel config file to disable default babel transpilation
+- do Jest configuration
+- install jsdom library
+- install @babel/preset-react to make jsx works in test cases.
+- include @babel/preset-react inside babel config   //["@babel/preset-react", {runtime: "automatic"}]
+- install @testing-library/jest-dom

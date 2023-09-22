@@ -30,7 +30,7 @@ const Header = () => {
             <Link to="/cart">
               Cart
               {cartItems.length >= 1 && (
-                <span className="px-1 mx-1 bg-green-600 text-white">
+                <span data-testid="cartItems" className="px-1 mx-1 bg-green-600 text-white">
                   {cartItems.length}
                 </span>
               )}

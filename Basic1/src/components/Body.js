@@ -51,6 +51,7 @@ const Body = () => {
         <div className="mx-[15px]">
           <input
             type="text"
+            data-testid="searchInput"
             className="border border-stone-900 mx-2 h-full bg-gray-200 hover:bg-white text-left p-2"
             value={searchInput}
             placeholder="Search for restaurent"
@@ -78,7 +79,7 @@ const Body = () => {
           onChange={(e) => setUserName(e.target.value)}
         />
       </div>
-      <div className="flex  flex-wrap ">
+      <div className="flex  flex-wrap">
         {searchedList.map((restaurent) => {
           return (
             <Link
@@ -86,9 +87,9 @@ const Body = () => {
               to={"/restaurants/" + restaurent?.info?.id}
             >
               {restaurent?.info?.veg ? (
-                <VegOnlyCard restaurentDetails={restaurent} />
+                <VegOnlyCard restaurentDetails={restaurent.info} />
               ) : (
-                <Card restaurentDetails={restaurent} />
+                <Card restaurentDetails={restaurent.info} />
               )}
             </Link>
           );

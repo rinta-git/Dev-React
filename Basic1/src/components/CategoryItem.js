@@ -15,6 +15,7 @@ const CategoryItem = (props) => {
           <div
             key={item?.card?.info?.id}
             className="m-3 p-3 border-b flex justify-between"
+            data-testid="foodItems"
           >
             <div className="w-9/12">
               <span className="font-medium">{item?.card?.info?.name}</span>
