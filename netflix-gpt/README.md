@@ -2,7 +2,10 @@
 - create-react-app
 - configure tailwindcss
 - Header
+- Routing of app
 - Login Form
+- Signup form
+- validation for form
 
 # Features
 --Login/Sign Up--
