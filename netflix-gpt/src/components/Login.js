@@ -1,13 +1,26 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { checkValidFields } from "../utils/validate";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  updateProfile,
+} from "firebase/auth";
+import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
   const [validationMsg, setvalidationMsg] = useState(null);
+  const dispatch = useDispatch();
 
   const email = useRef(null);
   const password = useRef(null);
+  const username = useRef(null);
+
+  const navigate = useNavigate();
 
   const toggleSignInForm = () => {
     setIsSignIn(!isSignIn);
@@ -16,10 +29,59 @@ const Login = () => {
   const handleBtnSubmit = () => {
     //validate fields
     let message = "";
-    
+
     message = checkValidFields(email.current.value, password.current.value);
     setvalidationMsg(message);
-    //do the login
+    if (message) return;
+    //do the signin/signup if there is valid credentials
+    if (!isSignIn) {
+      createUserWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed up
+          const user = userCredential.user;
+          updateProfile(user, {
+            displayName: username.current.value,
+          })
+            .then(() => {
+              // Profile updated!
+              const { uid, email, displayName } = auth.currentUser; //user is not yet updated, auth has all the value
+              dispatch(
+                addUser({ uid: uid, email: email, displayName: displayName })
+              );
+              navigate("/browser");
+            })
+            .catch((error) => {
+              // An error occurred
+              setvalidationMsg(error.message);
+            });
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setvalidationMsg(errorCode + "-" + errorMessage);
+          // ..
+        });
+    } else {
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          navigate("/browser");
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          setvalidationMsg("Oops! user not found");
+        });
+    }
   };
 
   return (
@@ -40,6 +102,7 @@ const Login = () => {
         </h1>
         {!isSignIn && (
           <input
+            ref={username}
             type="text"
             placeholder="Full Name"
             className="my-4 p-4 w-full bg-gray-800 text-gray-400 rounded-md"
