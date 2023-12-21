@@ -7,9 +7,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { FORM_BG_IMG } from "../utils/constant";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -19,8 +19,6 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const username = useRef(null);
-
-  const navigate = useNavigate();
 
   const toggleSignInForm = () => {
     setIsSignIn(!isSignIn);
@@ -52,7 +50,6 @@ const Login = () => {
               dispatch(
                 addUser({ uid: uid, email: email, displayName: displayName })
               );
-              navigate("/browser");
             })
             .catch((error) => {
               // An error occurred
@@ -74,7 +71,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate("/browser");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -88,10 +84,7 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/ab4b0b22-2ddf-4d48-ae88-c201ae0267e2/0efe6360-4f6d-4b10-beb6-81e0762cfe81/IN-en-20231030-popsignuptwoweeks-perspective_alpha_website_medium.jpg"
-          alt="background"
-        />
+        <img src={FORM_BG_IMG} alt="background" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
