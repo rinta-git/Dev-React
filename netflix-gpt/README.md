@@ -22,6 +22,9 @@
 - filter trailer and embeded the video
 - add the trailer to store
 - make the trailer auto play
+- GPT search option on header
+- Toggle gpt component
+- Add multiple language support for the website
 
 # Features
 --Login/Sign Up--

@@ -1,0 +1,47 @@
+export const lang = {
+  en: {
+    gptSearchBtnText: "GPT Search",
+    goHome: "Home",
+    signOutText: "Sign Out",
+    gptPlaceHolderText: "what would you likes to watch?",
+    search: "Search",
+    playNowBtn: "Play Now",
+    moreInfoBtn: "More info",
+    movieCategoriesTitle: {
+      nowPlaying: "Now Playing",
+      topRated: "Top Rated",
+      popular: "Popular",
+      upComing: "Upcoming",
+    },
+  },
+  de: {
+    gptSearchBtnText: "GPT-Suche",
+    goHome: "Heim",
+    signOutText: "Abmelden",
+    gptPlaceHolderText: "Was würdest du gerne sehen?",
+    search: "Suchen",
+    playNowBtn: "jetzt spielen",
+    moreInfoBtn: "Mehr Info",
+    movieCategoriesTitle: {
+      nowPlaying: "Läuft gerade",
+      topRated: "Bestbewertet",
+      popular: "Beliebt",
+      upComing: "Bevorstehende",
+    },
+  },
+  fr: {
+    gptSearchBtnText: "recherche GPT",
+    goHome: "Maison",
+    signOutText: "Se déconnecter",
+    gptPlaceHolderText: "qu'aimeriez-vous regarder ?",
+    search: "Recherche",
+    playNowBtn: "joue maintenant",
+    moreInfoBtn: "Plus d'informations",
+    movieCategoriesTitle: {
+      nowPlaying: "Lecture en cours",
+      topRated: "Les mieux notés",
+      popular: "Populaire",
+      upComing: "A venir",
+    },
+  },
+};

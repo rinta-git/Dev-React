@@ -13,3 +13,9 @@ export const API_OPTIONS = {
 };
 
 export const MOVIE_PATH = "https://image.tmdb.org/t/p/w500/";
+
+export const SUPPORTED_LANGUAGES = [
+  { id: "en", name: "EN" },
+  { id: "de", name: "DE" },
+  { id: "fr", name: "FR" },
+];
