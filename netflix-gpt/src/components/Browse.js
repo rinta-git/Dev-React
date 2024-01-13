@@ -15,15 +15,15 @@ const Browse = () => {
   useTopRatedMovies();
   useUpcomingMovies();
   return (
-    <div>
+    <div >
       <Header />
       {isGptEnabled ? (
         <GptSearch />
       ) : (
-        <>
+        <div className="bg-black">
           <MovieTrailerContainer />
           <MovieListContainer />
-        </>
+        </div>
       )}
     </div>
   );

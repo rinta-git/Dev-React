@@ -13,6 +13,14 @@ export const lang = {
       popular: "Popular",
       upComing: "Upcoming",
     },
+    signIn:"Sign In",
+    signUp:"Sign Up",
+    userIdPlaceHolder:"Email or phone number",
+    password:"Password",
+    newToNetflix:"New to Netflix? ",
+    now:" now",
+    fullName:"Full Name",
+    alreadyMember:"Already a member?"
   },
   de: {
     gptSearchBtnText: "GPT-Suche",
@@ -28,6 +36,14 @@ export const lang = {
       popular: "Beliebt",
       upComing: "Bevorstehende",
     },
+    signIn:"Anmelden",
+    signUp:"Registrieren",
+    userIdPlaceHolder:"E-Mail oder Telefonnummer",
+    password:"Passwort",
+    newToNetflix:"Neu bei Netflix? ",
+    now:" Jetzt",
+    fullName:"vollständiger Name",
+    alreadyMember:"Schon ein Mitglied?"
   },
   fr: {
     gptSearchBtnText: "recherche GPT",
@@ -43,5 +59,13 @@ export const lang = {
       popular: "Populaire",
       upComing: "A venir",
     },
+    signIn:"Se connecter",
+    signUp:"S'inscrire",
+    userIdPlaceHolder:"Email ou numéro de téléphone",
+    password:"Mot de passe",
+    newToNetflix:"Nouveau sur Netflix ? ",
+    now:" maintenant",
+    fullName:"nom et prénom",
+    alreadyMember:"Déjà membre?"
   },
 };

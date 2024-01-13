@@ -7,7 +7,7 @@ function GptSearch() {
   return (
     <div>
       <div className="fixed -z-10">
-        <img src={FORM_BG_IMG} alt="background" />
+        <img src={FORM_BG_IMG} alt="background" className="w-screen h-screen object-cover" />
       </div>
       <GptSearchbar />
       <GptMovieSuggestions />
