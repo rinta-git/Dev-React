@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { addMainTrailer } from "../utils/movieSlice";
 
 const useMovieTrailerBg = (mainMovieId) => {
+  
   const dispatch = useDispatch();
   const mainMovieUrl =
     "https://api.themoviedb.org/3/movie/" + mainMovieId + "/videos";
@@ -14,7 +15,7 @@ const useMovieTrailerBg = (mainMovieId) => {
       (video) => video.type === "Trailer" && video.name === "Official Trailer"
     );
     if (!trailer) {
-        trailer = response?.results[0]
+      trailer = response?.results[0];
     }
     dispatch(addMainTrailer(trailer[0]));
   };

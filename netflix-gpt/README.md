@@ -24,7 +24,13 @@
 - make the trailer auto play
 - GPT search option on header
 - Toggle gpt component
+- Get GPT suggested movie names
+- Get the details of gpt movies from TMDB
+- Store the searched names and details
 - Add multiple language support for the website
+- Movie details on click of each movie card
+- add sensitive info to .env file
+- responsive pages
 
 # Features
 --Login/Sign Up--
@@ -45,3 +51,17 @@
 # ToDos
 - add menu in header
 - add error page for signout/ signin fails
+
+# Attractions
+- Hooks [useEffect, useState, usRef, useSelector, useDispatch, useNavigate]
+- Redux store
+- Reused components
+- multi lingual support
+- chat gpt use
+- memoisation for reducing network calls
+- useref to get current data from input field
+- firebase api for authentication
+- tmdb api
+- tailwind css
+- customHooks for cleaner code
+- responsive web

@@ -7,15 +7,16 @@ import { onAuthStateChanged } from "firebase/auth";
 import { addUser, removeUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
 import { LOGO, SUPPORTED_LANGUAGES } from "../utils/constant";
-import { toggleGptSearch } from "../utils/GptSlice";
+import { clearGptMovieSearch, toggleGptSearch } from "../utils/GptSlice";
 import { addLanguage } from "../utils/configSlice";
 import { lang } from "../utils/languageConstant";
 const Header = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const user = useSelector((store) => store.user);
+  const movies = useSelector((store) => store.gpt?.gptMovieList);
   const chosenLang = useSelector((store) => store.config?.lang);
-  const isGptPage = useSelector(store => store.gpt?.gptSearchOption)
+  const isNotGptPage = useSelector((store) => store.gpt?.gptSearchOption);
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
@@ -27,6 +28,7 @@ const Header = () => {
   };
 
   const handleGPTOption = () => {
+    movies && dispatch(clearGptMovieSearch());
     dispatch(toggleGptSearch());
   };
 
@@ -71,7 +73,9 @@ const Header = () => {
             className="bg-purple-600 text-white rounded-md pl-3 pr-3 m-3"
             onClick={handleGPTOption}
           >
-            {isGptPage ? lang[chosenLang].gptSearchBtnText :  lang[chosenLang].goHome}
+            {isNotGptPage
+              ? lang[chosenLang].goHome
+              : lang[chosenLang].gptSearchBtnText}
           </button>
           <button
             className=" text-white font-bold rounded-md p-2"

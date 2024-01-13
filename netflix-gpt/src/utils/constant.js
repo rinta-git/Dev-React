@@ -8,7 +8,7 @@ export const API_OPTIONS = {
   headers: {
     accept: "application/json",
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlNzU1YzM0ZTFkMzk1Nzc1OTY2MDg0OTc5ZGNlY2QzYyIsInN1YiI6IjY1ODNkNDY2OTkyZmU2M2VmODcyNzA5YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.XFgZQnsp4d0YIc-6ViMFeuosAOCbL_gptma5hvGe4ys",
+      "Bearer "+process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -19,3 +19,7 @@ export const SUPPORTED_LANGUAGES = [
   { id: "de", name: "DE" },
   { id: "fr", name: "FR" },
 ];
+
+
+export const GPT_QUERY_PART_1 = "Act as a Movie Recommendation system and suggest some movies for the query : "
+export const GPT_QUERY_PART_2 = ". only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Vettam, Kilukkam, Don, 3 Idiots, Niram";

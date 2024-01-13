@@ -6,7 +6,7 @@ import GptMovieSuggestions from "./GptMovieSuggestions";
 function GptSearch() {
   return (
     <div>
-      <div className="absolute -z-10">
+      <div className="fixed -z-10">
         <img src={FORM_BG_IMG} alt="background" />
       </div>
       <GptSearchbar />
