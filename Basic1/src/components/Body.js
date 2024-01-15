@@ -32,7 +32,7 @@ const Body = () => {
     return <h1>Looks like you are offline😞. Check your internet please.</h1>;
   }
 
-  return restaurents.length === 0 ? (
+  return restaurents?.length === 0 ? (
     <ShimmerCard />
   ) : (
     <>
