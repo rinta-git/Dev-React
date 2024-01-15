@@ -40,7 +40,7 @@ const Body = () => {
         <button
           className="border border-solid rounded-md p-2"
           onClick={() => {
-            const filteredList = restaurents.filter(
+            const filteredList = restaurents?.filter(
               (restaurent) => restaurent?.info?.avgRating >= 4
             );
             setSearchedList(filteredList);
@@ -60,7 +60,7 @@ const Body = () => {
           <button
             className="border border-solid rounded-md p-2"
             onClick={() => {
-              const filteredData = restaurents.filter((res) =>
+              const filteredData = restaurents?.filter((res) =>
                 res?.info?.name
                   .toLocaleLowerCase()
                   .includes(searchInput.toLocaleLowerCase())
@@ -87,9 +87,9 @@ const Body = () => {
               to={"/restaurants/" + restaurent?.info?.id}
             >
               {restaurent?.info?.veg ? (
-                <VegOnlyCard restaurentDetails={restaurent.info} />
+                <VegOnlyCard restaurentDetails={restaurent?.info} />
               ) : (
-                <Card restaurentDetails={restaurent.info} />
+                <Card restaurentDetails={restaurent?.info} />
               )}
             </Link>
           );
