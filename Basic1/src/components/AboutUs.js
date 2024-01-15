@@ -6,13 +6,13 @@ import UserContext from "../utils/UserContext";
 class AboutUs extends Component {
   constructor(props) {
     super(props);
-    console.log("Parent constructor");
+   // console.log("Parent constructor");
   }
   componentDidMount() {
-    console.log("Parent didMount");
+   // console.log("Parent didMount");
   }
   render() {
-    console.log("Parent render");
+   // console.log("Parent render");
     return (
       <>
         <UserContext.Consumer>

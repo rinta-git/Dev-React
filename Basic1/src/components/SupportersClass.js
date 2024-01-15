@@ -8,7 +8,7 @@ class SupportersClass extends React.Component {
       count2: 1,
       userInfo: {},
     };
-    console.log(this.props.name + "child constructor");
+   // console.log(this.props.name + "child constructor");
   }
 
   async componentDidMount() {
@@ -16,15 +16,15 @@ class SupportersClass extends React.Component {
     const json = await data.json();
     this.setState({ userInfo: json });
     this.timer = setInterval(() => {
-      console.log("timer for this component");
+     // console.log("timer for this component");
     }, 1000);
-    console.log(this.props.name + "child didMount");
+    //console.log(this.props.name + "child didMount");
   }
   componentWillUnmount() {
     clearInterval(this.timer);
   }
   render() {
-    console.log(this.props.name + "child rendered");
+   // console.log(this.props.name + "child rendered");
     const { role } = this.props;
     const { name, location, avatar_url } = this.state.userInfo;
     return (

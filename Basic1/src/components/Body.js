@@ -17,11 +17,12 @@ const Body = () => {
   const fetchData = async () => {
     const data = await fetch(RES_LIST_API);
     const json = await data.json();
+    // console.log(json?.data?.cards[1]?.card?.card?.gridElements)
     setRestaurentList(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setSearchedList(
-      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   };
 
@@ -31,7 +32,7 @@ const Body = () => {
   if (!onlineStatus) {
     return <h1>Looks like you are offline😞. Check your internet please.</h1>;
   }
-
+  
   return restaurents?.length === 0 ? (
     <ShimmerCard />
   ) : (

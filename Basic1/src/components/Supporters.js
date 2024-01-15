@@ -6,7 +6,7 @@ const Supporters = (props) => {
   const [count2, setCount2] = useState(1);
   useEffect(() => {
     const timer = setInterval(() => {
-      console.log("timer started");
+     // console.log("timer started");
     }, 1000);
     return clearInterval(timer);
   }, []);
