@@ -7,7 +7,7 @@ export const checkValidFields = (email, password) => {
     return "Email address is not valid";
   }
   if (!isValidPassword) {
-    return "Password is not valid";
+    return "Password is not valid, must include uppercase letter, lowercase letter, number and minimum 8 character long";
   }
   return null;
 };
