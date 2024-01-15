@@ -7,7 +7,7 @@ import AboutUs from "./components/AboutUs";
 import ErrorPage from "./components/ErrorPage";
 import ContactUs from "./components/ContactUs";
 import Restaurent from "./components/Restaurent";
-import UserContext from "./utils/userContext";
+import UserContext from "./utils/UserContext";
 import { Provider } from "react-redux";
 import appStore from "./store";
 import Cart from "./components/Cart";

@@ -2,7 +2,7 @@ import { HUNGRY_SPOT_LOGO } from "../utils/constants";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/userContext";
+import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 const Header = () => {
   const [btnText, setBtnText] = useState("Login");

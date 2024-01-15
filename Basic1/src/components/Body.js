@@ -4,7 +4,7 @@ import ShimmerCard from "./ShimmerCard";
 import { Link } from "react-router-dom";
 import { RES_LIST_API } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import UserContext from "../utils/userContext";
+import UserContext from "../utils/UserContext";
 const Body = () => {
   const [restaurents, setRestaurentList] = useState([]);
   const [searchInput, setSearchInput] = useState("");
