@@ -80,7 +80,7 @@ const Body = () => {
         />
       </div>
       <div className="flex  flex-wrap">
-        {searchedList.map((restaurent) => {
+        {searchedList && searchedList.map((restaurent) => {
           return (
             <Link
               key={restaurent?.info?.id}
