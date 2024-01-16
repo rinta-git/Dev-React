@@ -7,7 +7,7 @@ const MovieListContainer = () => {
   const chosenLang = useSelector((store) => store.config?.lang);
   return (
     <div className=" bg-black">
-      <div className="md:-mt-40 mt-5 relative z-20 pl-6">
+      <div className="lg:-mt-40 mt-5 md:mt-[-5rem] relative z-20 pl-6">
         <MovieCategories
           title={lang[chosenLang].movieCategoriesTitle.nowPlaying}
           movies={movies?.nowPlayingMovie}

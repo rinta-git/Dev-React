@@ -2,3 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 .slide-container { width: calc(100vw - 2 * 8px); }
+.movie-carousal .react-multiple-carousel__arrow{
+    background: rgb(173 166 166 / 50%)
+}
+.movie-carousal .react-multiple-carousel__arrow::before {
+    font-size: 30px;
+}

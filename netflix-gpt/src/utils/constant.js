@@ -7,8 +7,7 @@ export const API_OPTIONS = {
   method: "GET",
   headers: {
     accept: "application/json",
-    Authorization:
-      "Bearer "+process.env.REACT_APP_TMDB_KEY,
+    Authorization: "Bearer " + process.env.REACT_APP_TMDB_KEY,
   },
 };
 
@@ -20,6 +19,26 @@ export const SUPPORTED_LANGUAGES = [
   { id: "fr", name: "FR" },
 ];
 
+export const GPT_QUERY_PART_1 =
+  "Act as a Movie Recommendation system and suggest some movies for the query : ";
+export const GPT_QUERY_PART_2 =
+  ". only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Vettam, Kilukkam, Don, 3 Idiots, Niram";
 
-export const GPT_QUERY_PART_1 = "Act as a Movie Recommendation system and suggest some movies for the query : "
-export const GPT_QUERY_PART_2 = ". only give me names of 5 movies, comma seperated like the example result given ahead. Example Result: Vettam, Kilukkam, Don, 3 Idiots, Niram";
+export const carousalMwebStyles = {
+  superLargeDesktop: {
+    breakpoint: { max: 4000, min: 3000 },
+    items: 10,
+  },
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 8,
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 4,
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 2,
+  },
+};
