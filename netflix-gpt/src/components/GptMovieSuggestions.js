@@ -12,6 +12,7 @@ export default function GptMovieSuggestions() {
           key={movie}
           title={movie}
           movies={gptMovieList[index]}
+          isGpt={true}
         />
       ))}
     </div>

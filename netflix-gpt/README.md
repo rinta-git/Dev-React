@@ -28,9 +28,14 @@
 - Get the details of gpt movies from TMDB
 - Store the searched names and details
 - Add multiple language support for the website
-- Movie details on click of each movie card
+- Change main movie on click of each movie card
 - add sensitive info to .env file
 - responsive pages
+- add carousal sliding
+- error handling
+- loader while fetcing gpt list
+- details on more info
+- play trailer on play button
 
 # Features
 --Login/Sign Up--

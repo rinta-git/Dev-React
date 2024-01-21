@@ -11,13 +11,13 @@ function MainMovieTitle(props) {
       <h1 className="font-bold text-2xl text-white md:text-3xl lg:text-4xl md:pb-0 pb-3">
         {title}
       </h1>
-      <p className="lg:w-1/4 md:w-2/4 py-5 text-lg text-white md:text-sm lg:text-lg hidden md:block">
+      <p className="lg:w-1/4 md:w-2/4 py-5 text-lg text-white md:text-sm lg:text-lg hidden lg:h-32 md:h-28 md:line-clamp-4">
         {overview}
       </p>
-      <button className="bg-white text-black font-bold lg:p-3 lg:px-4 p-2 rounded-md hover:bg-opacity-80 text-[12px] lg:text-base">
+      <button className="bg-white text-black font-bold lg:p-3 lg:px-4 p-2 rounded-md hover:bg-opacity-80 text-[12px] lg:text-base lg:mt-6 md:mt-4">
         <FontAwesomeIcon icon={faPlay} /> {lang[chosenLang].playNowBtn}
       </button>
-      <button className="bg-gray-500 text-white lg:p-3 lg:px-4 p-2 mx-2 rounded-md bg-opacity-50 hover:bg-opacity-80 text-[12px] lg:text-base">
+      <button className="bg-gray-500 text-white lg:p-3 lg:px-4 p-2 mx-2 rounded-md bg-opacity-50 hover:bg-opacity-80 text-[12px] lg:text-base lg:mt-6">
         <FontAwesomeIcon icon={faInfoCircle} /> {lang[chosenLang].moreInfoBtn}
       </button>
     </div>

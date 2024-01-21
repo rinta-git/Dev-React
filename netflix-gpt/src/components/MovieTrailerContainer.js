@@ -4,10 +4,9 @@ import MainMovieTitle from "./MainMovieTitle";
 import MainMovieBg from "./MainMovieBg";
 
 const MovieTrailerContainer = () => {
-  const movies = useSelector((store) => store.movie?.nowPlayingMovie);
-  if (!movies) return;
-  const mainMovie = movies[0];
-  const { original_title, overview, id } = mainMovie || {};
+  const movie = useSelector((store) => store.movie?.selectedMovie);
+  if (!movie) return;
+  const { original_title, overview, id } = movie || {};
   
   return (
     <div>

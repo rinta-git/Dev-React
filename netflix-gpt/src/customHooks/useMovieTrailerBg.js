@@ -16,11 +16,11 @@ const useMovieTrailerBg = (mainMovieId) => {
     );
     if (!trailer) {
       trailer = response?.results[0];
-    }
+    } 
     dispatch(addMainTrailer(trailer[0]));
   };
   useEffect(() => {
     getTrailer();
-  }, []);
+  }, [mainMovieId]);
 };
 export default useMovieTrailerBg;
